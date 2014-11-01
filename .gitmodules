@@ -1,0 +1,6 @@
+[submodule "ugfx"]
+	path = ugfx
+	url = https://bitbucket.org/Tectu/ugfx.git
+[submodule "ChibiOS-RT-Community"]
+	path = ChibiOS-RT-Community
+	url = https://github.com/ChibiOS/ChibiOS-RT-Community.git
