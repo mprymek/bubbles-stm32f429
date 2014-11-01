@@ -83,8 +83,8 @@ include $(GFXLIB)/gfx.mk
 #GFXINC  += $(GFXLIB)/boards/base/Mikromedia-STM32-M4-ILI9341
 
 # Define linker script file here
-#LDSCRIPT = $(PORTLD)/STM32F429xI.ld
-LDSCRIPT = ./STM32F429xI_segmented.ld
+LDSCRIPT = $(PORTLD)/STM32F429xI.ld
+#LDSCRIPT = ./STM32F429xI_segmented.ld
 
 # C sources that can be compiled in ARM or THUMB mode depending on the global
 # setting.
@@ -149,9 +149,9 @@ STLIB    = STM32F429I-Discovery_FW_V1.0.1
 
 STLIBINC = \
           $(STLIB)/Utilities/STM32F429I-Discovery \
+          $(STLIB)/Libraries/STM32F4xx_StdPeriph_Driver/inc \
 #          resolve/ \
 #          $(STLIB)/Utilities/Common \
-#          $(STLIB)/Libraries/STM32F4xx_StdPeriph_Driver/inc \
 #          $(STLIB)/Libraries/CMSIS/Device/ST/STM32F4xx/Include \
 #          $(STLIB)/Libraries/CMSIS/Include \
 #          # EOL

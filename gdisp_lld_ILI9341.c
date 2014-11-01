@@ -26,6 +26,12 @@
 
 #include "gdisp_lld_config.h"
 #include "src/gdisp/driver.h"
+
+//#define STM32F429_439xx TRUE
+//#include "ChibiOS-RT-Community/os/hal/platforms/STM32F4xx/stm32f2xx.h"
+#include "stm32f4xx_gpio.h"
+#include "stm32f4xx_ltdc.h"
+
 #include "stm32f429i_discovery_lcd.h"
 
 /*===========================================================================*/
