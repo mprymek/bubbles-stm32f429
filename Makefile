@@ -78,7 +78,7 @@ include $(CHIBIOS)/os/kernel/kernel.mk
 include $(CHIBIOS)/test/test.mk
 include $(GFXLIB)/gfx.mk
 #include $(GFXLIB)/boards/base/Mikromedia-STM32-M4-ILI9341/ChibiOS_Board/board.mk
-include $(GFXLIB)/drivers/gdisp/ILI9341/driver.mk
+#include $(GFXLIB)/drivers/gdisp/ILI9341/driver.mk
 
 #GFXINC  += $(GFXLIB)/boards/base/Mikromedia-STM32-M4-ILI9341
 
@@ -97,10 +97,10 @@ CSRC = $(PORTSRC) \
        $(CHIBIOS)/os/various/shell.c \
        $(CHIBIOS)/os/various/chprintf.c \
 		 $(GFXSRC) \
-       usbcfg.c \
        main.c \
+		 gdisp_lld_ILI9341.c \
+       #usbcfg.c \
        #stmdrivers/stm32f429i_discovery_sdram.c stmdrivers/stm32f4xx_fmc.c \
-		 #gdisp_lld_ILI9341.c \
        # EOL
 
 # C++ sources that can be compiled in ARM or THUMB mode depending on the global
@@ -145,12 +145,12 @@ INCDIR = $(PORTINC) $(KERNINC) $(TESTINC) \
 # STLIB
 #
 
-#STLIB    = STM32F429I-Discovery_FW_V1.0.1
-#
-#STLIBINC = \
+STLIB    = STM32F429I-Discovery_FW_V1.0.1
+
+STLIBINC = \
+          $(STLIB)/Utilities/STM32F429I-Discovery \
 #          resolve/ \
 #          $(STLIB)/Utilities/Common \
-#          $(STLIB)/Utilities/STM32F429I-Discovery \
 #          $(STLIB)/Libraries/STM32F4xx_StdPeriph_Driver/inc \
 #          $(STLIB)/Libraries/CMSIS/Device/ST/STM32F4xx/Include \
 #          $(STLIB)/Libraries/CMSIS/Include \
@@ -160,6 +160,9 @@ INCDIR = $(PORTINC) $(KERNINC) $(TESTINC) \
 #       resolve/stm32f429i_discovery_lcd.c
 #       #$(STLIB)/Utilities/STM32F429I-Discovery/stm32f429i_discovery_lcd.c \
 #       # EOL
+
+INCDIR += $(STLIBINC)
+#CSRC   += $(STLIBSRC)
 
 #
 #
