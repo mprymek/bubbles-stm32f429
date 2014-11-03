@@ -156,13 +156,16 @@ STLIBINC = \
 #          $(STLIB)/Libraries/CMSIS/Include \
 #          # EOL
 #
-#STLIBSRC = \
-#       resolve/stm32f429i_discovery_lcd.c
-#       #$(STLIB)/Utilities/STM32F429I-Discovery/stm32f429i_discovery_lcd.c \
+STLIBSRC = \
+           stm32f429i_discovery_lcd.c \
+           stm32f4xx_dma2d.c \
+			  stm32f4xx_rcc.c \
+#			  $(STLIB)/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_fmc.c \
+#           $(STLIB)/Utilities/STM32F429I-Discovery/stm32f429i_discovery_lcd.c \
 #       # EOL
 
 INCDIR += $(STLIBINC)
-#CSRC   += $(STLIBSRC)
+CSRC   += $(STLIBSRC)
 
 #
 #
